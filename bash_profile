@@ -10,7 +10,7 @@ export PS1="\[\033[01;32m\] \u@\h: \W \[\033[00m\]$ "
 export LANG="de_DE.UTF-8"
 # gnuchlog vim plugin
 export EMAIL="Stefan Eletzhofer <stefan.eletzhofer@nexiles.de>"
-export EDITOR="mvimnew -f"
+export EDITOR="/Applications/MacVim.app/Contents/MacOS/Vim -g -f "
 
 #---------------------------------------------------------------------
 # python
