@@ -18,7 +18,8 @@ Changelog
 0.3 - ????-??-??
 ----------------
 
-no changes yet
+- uncrustify.cfg added.  See http://roobasoft.com/blog/, https://gist.github.com/261662/ and
+  https://github.com/tonyarnold/Xcode-4-Uncrustify-Automator-Services
 
 0.2 - 2011-03-11
 ----------------
