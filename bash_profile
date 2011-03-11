@@ -3,7 +3,7 @@
 # prompt and path
 export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:$PATH
 
-export PS1="\[\033[01;32m\] \u@\h: \W \[\033[00m\]$ "
+export PS1='\[\033[01;32m\]\u@\h:\W\[\033[01;33m\]$(__git_ps1 "(%s)")\[\033[00m\]$ '
 
 #---------------------------------------------------------------------
 # env setup
