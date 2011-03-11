@@ -3,7 +3,7 @@
 # prompt and path
 export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:$PATH
 
-export PS1="\[\033[01;32m\] \u@\h: \W \[\033[00m\]$ "
+export PS1='\[\033[01;32m\]\u@\h:\W\[\033[01;33m\]$(__git_ps1 "(%s)")\[\033[00m\]$ '
 
 #---------------------------------------------------------------------
 # env setup
@@ -27,11 +27,13 @@ export PATH=$PATH:$JYTHON_HOME/bin
 . /usr/local/bin/virtualenvwrapper.sh
 
 # New cd function that does the virtualenv magic
-function venv_cd {
-    cd "$@" && eval $(python ~/bin/venv_cd.py)
-}
+test -f "~/bin/venv_cd.py" && {
+	function venv_cd {
+		cd "$@" && eval $(python ~/bin/venv_cd.py)
+	}
 
-alias cd="venv_cd"
+	alias cd="venv_cd"
+}
 
 #---------------------------------------------------------------------
 # history
