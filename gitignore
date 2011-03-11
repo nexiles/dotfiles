@@ -1,0 +1,12 @@
+.DS_Store
+*.pyc
+*.pyo
+*.sw?
+*.cache
+*.pbxbtree
+*.build
+*.pch
+*/build/
+*.app/
+*.compressed.js
+*.egg-info
