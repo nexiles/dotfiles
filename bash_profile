@@ -27,11 +27,13 @@ export PATH=$PATH:$JYTHON_HOME/bin
 . /usr/local/bin/virtualenvwrapper.sh
 
 # New cd function that does the virtualenv magic
-function venv_cd {
-    cd "$@" && eval $(python ~/bin/venv_cd.py)
-}
+test -f "~/bin/venv_cd.py" && {
+	function venv_cd {
+		cd "$@" && eval $(python ~/bin/venv_cd.py)
+	}
 
-alias cd="venv_cd"
+	alias cd="venv_cd"
+}
 
 #---------------------------------------------------------------------
 # history
