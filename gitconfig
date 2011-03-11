@@ -1,0 +1,16 @@
+[user]
+	name = Stefan Eletzhofer
+	email = se@nexiles.de
+[color]
+	status = auto
+	diff = auto
+	branch = auto
+	interactive = auto
+[alias]
+	st = status
+	ci = commit
+	co = checkout
+[merge]
+	tool = opendiff
+[core]
+	excludesfile = /Users/seletz/.gitignore
