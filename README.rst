@@ -4,13 +4,29 @@ seletz' dotfiles
 
 :Author:    Stefan Eletzhofer
 :Date:      2011-03-11
-:Revision:  0.1
+:Revision:  0.2
 
 Abstract
---------
+========
 
 These are my "dotfiles".  I push them to git merely as an exercise to
 get used to 'git flow'.
+
+Changelog
+=========
+
+0.2 - 2011-03-11
+----------------
+
+- begun Changelog
+- added git branch PS1 bach prompt magic
+- fix complaints when venv hack scrit missing
+
+
+0.1 - 2011-03-10
+----------------
+
+- initial release
 
 
 ::
