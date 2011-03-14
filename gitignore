@@ -5,7 +5,6 @@
 *.cache
 *.pbxbtree
 *.build
-*.pch
 */build/
 *.app/
 *.compressed.js
