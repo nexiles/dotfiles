@@ -9,3 +9,4 @@
 *.app/
 *.compressed.js
 *.egg-info
+*$py.class
