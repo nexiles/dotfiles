@@ -36,6 +36,10 @@ test -f "~/bin/venv_cd.py" && {
 }
 
 #---------------------------------------------------------------------
+# NODE.JS
+export NODE_PATH=/usr/local/lib/node
+
+#---------------------------------------------------------------------
 # history
 shopt -s histappend
 export HISTFILESIZE=100000
