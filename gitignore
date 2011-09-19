@@ -10,3 +10,4 @@
 *.compressed.js
 *.egg-info
 *$py.class
+*.class

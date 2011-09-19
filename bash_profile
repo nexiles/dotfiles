@@ -3,7 +3,8 @@
 # prompt and path
 export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:$PATH
 
-export PS1='\[\033[01;32m\]\u@\h:\W\[\033[01;33m\]$(__git_ps1 "(%s)")\[\033[00m\]$ '
+#export PS1='\[\033[01;32m\]\u@\h:\W\[\033[01;33m\]$(__git_ps1 "(%s)")\[\033[00m\]$ '
+export PS1="\`if [ \$? = 0 ]; then echo '\033[1;32m\033[0m'; else echo '\033[0;31m\033[0m' ; fi\` \[\033[00;37m\]\w\[\033[01;33m\]$(__git_ps1 '(%s)')\[\033[00m\]\n$ "
 
 #---------------------------------------------------------------------
 # env setup
@@ -11,6 +12,8 @@ export LANG="de_DE.UTF-8"
 # gnuchlog vim plugin
 export EMAIL="Stefan Eletzhofer <stefan.eletzhofer@nexiles.de>"
 export EDITOR="/Applications/MacVim.app/Contents/MacOS/Vim -g -f "
+export ARCHFLAGS='-arch x86_64'
+
 
 #---------------------------------------------------------------------
 # python
@@ -21,7 +24,7 @@ export WORKON_HOME=~/.virtualenvs
 export PROJECT_HOME=$HOME/develop
 export VIRTUALENV_ROOT=$WORKON_HOME
 
-export JYTHON_HOME=/usr/local/Cellar/jython/2.5.1/libexec
+export JYTHON_HOME=/usr/local/Cellar/jython/2.5.2/libexec
 export PATH=$PATH:$JYTHON_HOME/bin
 
 . /usr/local/bin/virtualenvwrapper.sh
@@ -38,6 +41,7 @@ test -f "~/bin/venv_cd.py" && {
 #---------------------------------------------------------------------
 # NODE.JS
 export NODE_PATH=/usr/local/lib/node
+export JS_CMD=node
 
 #---------------------------------------------------------------------
 # history
