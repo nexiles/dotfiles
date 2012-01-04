@@ -15,7 +15,7 @@ get used to 'git flow'.
 Changelog
 =========
 
-0.3 - ????-??-??
+0.3 - 2012-01-04
 ----------------
 
 - switched from bash to zsh based on https://github.com/robbyrussell/oh-my-zsh
