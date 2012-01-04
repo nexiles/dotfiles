@@ -14,3 +14,4 @@
 	tool = opendiff
 [core]
 	excludesfile = /Users/seletz/.gitignore
+	whitespace = fix

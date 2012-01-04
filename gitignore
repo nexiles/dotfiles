@@ -5,8 +5,9 @@
 *.cache
 *.pbxbtree
 *.build
-*.pch
 */build/
 *.app/
 *.compressed.js
 *.egg-info
+*$py.class
+*.class
