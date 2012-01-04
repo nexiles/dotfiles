@@ -3,8 +3,8 @@ seletz' dotfiles
 ================
 
 :Author:    Stefan Eletzhofer
-:Date:      2011-03-11
-:Revision:  0.3dev
+:Date:      2012-01-04
+:Revision:  0.3
 
 Abstract
 ========
@@ -17,6 +17,8 @@ Changelog
 
 0.3 - ????-??-??
 ----------------
+
+- switched from bash to zsh based on https://github.com/robbyrussell/oh-my-zsh
 
 - uncrustify.cfg added.  See http://roobasoft.com/blog/, https://gist.github.com/261662/ and
   https://github.com/tonyarnold/Xcode-4-Uncrustify-Automator-Services
