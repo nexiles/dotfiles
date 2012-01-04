@@ -4,7 +4,7 @@ seletz' dotfiles
 
 :Author:    Stefan Eletzhofer
 :Date:      2012-01-04
-:Revision:  0.3
+:Revision:  0.4dev
 
 Abstract
 ========
@@ -14,6 +14,11 @@ get used to 'git flow'.
 
 Changelog
 =========
+
+0.4 - unreleased
+----------------
+
+no changes yet.
 
 0.3 - 2012-01-04
 ----------------
