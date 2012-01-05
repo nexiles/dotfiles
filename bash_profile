@@ -73,3 +73,8 @@ fi
 
 complete -C "mite auto-complete" mite
 
+#---------------------------------------------------------------------
+# direnv hook
+eval `direnv hook $0`
+
+
