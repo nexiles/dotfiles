@@ -35,7 +35,6 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
-
 #---------------------------------------------------------------------
 # prompt and path
 export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:$PATH
@@ -62,6 +61,11 @@ export PATH=$PATH:$JYTHON_HOME/bin
 . /usr/local/bin/virtualenvwrapper.sh
 
 #---------------------------------------------------------------------
+# NODE.JS
+export NODE_PATH=/usr/local/lib/node
+export JS_CMD=node
+
+#---------------------------------------------------------------------
 # GROOVY
 export GROOVY_HOME=$(brew --prefix groovy)/libexec
 
@@ -72,4 +76,6 @@ alias la="ls -la"
 alias ll="ls -l"
 alias serve="python -mSimpleHTTPServer"
 
-
+#---------------------------------------------------------------------
+# direnv hook
+eval `direnv hook $0`
