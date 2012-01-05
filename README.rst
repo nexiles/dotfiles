@@ -18,7 +18,9 @@ Changelog
 0.4 - unreleased
 ----------------
 
-no changes yet.
+- added configuration for RVM
+- added node.js configuration
+- added direnv hook
 
 0.3 - 2012-01-04
 ----------------
