@@ -66,6 +66,10 @@ export NODE_PATH=/usr/local/lib/node
 export JS_CMD=node
 
 #---------------------------------------------------------------------
+# Ruby RVM
+source ~/.rvm/scripts/rvm
+
+#---------------------------------------------------------------------
 # GROOVY
 export GROOVY_HOME=$(brew --prefix groovy)/libexec
 
