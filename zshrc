@@ -33,6 +33,8 @@ plugins=(osx git git-flow fabric groovy grails python)
 
 source $ZSH/oh-my-zsh.sh
 
+unsetopt correct_all
+
 # Customize to your needs...
 
 #---------------------------------------------------------------------
