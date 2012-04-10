@@ -37,6 +37,15 @@ unsetopt correct_all
 
 # Customize to your needs...
 
+case $TERM in
+    *xterm*|ansi)
+        function settab { print -Pn "\e]1;%n@%m: %~\a" }
+        function settitle { print -Pn "\e]2;%n@%m: %~\a" }
+        function chpwd { settab;settitle }
+        settab;settitle
+        ;;
+esac
+
 #---------------------------------------------------------------------
 # prompt and path
 export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:$PATH
@@ -50,9 +59,10 @@ export EDITOR="/Applications/MacVim.app/Contents/MacOS/Vim -g -f "
 
 #---------------------------------------------------------------------
 # python
-export PYTHONSTARTUP=~/.pyinit
+#export PYTHONSTARTUP=~/.pyinit
 
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2.6
+# export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2.6
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2.7
 export WORKON_HOME=~/.virtualenvs
 export PROJECT_HOME=$HOME/develop
 export VIRTUALENV_ROOT=$WORKON_HOME
@@ -61,6 +71,8 @@ export JYTHON_HOME=$(brew --prefix jython)/libexec
 export PATH=$PATH:$JYTHON_HOME/bin
 
 . /usr/local/bin/virtualenvwrapper.sh
+
+echo "PYTHON: $(python -c 'import sys; print sys.prefix')"
 
 #---------------------------------------------------------------------
 # NODE.JS
