@@ -48,26 +48,28 @@ esac
 
 #---------------------------------------------------------------------
 # prompt and path
-export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:$PATH
+export PATH=~/bin:/usr/local/share/python:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/share/npm/bin:$PATH
 
 #---------------------------------------------------------------------
 # env setup
 export LANG="de_DE.UTF-8"
 # gnuchlog vim plugin
 export EMAIL="Stefan Eletzhofer <stefan.eletzhofer@nexiles.de>"
-export EDITOR="/Applications/MacVim.app/Contents/MacOS/Vim -g -f "
+export EDITOR="/Users/seletz/Applications/MacVim.app/Contents/MacOS/Vim -g -f "
 
 #---------------------------------------------------------------------
 # python
 #export PYTHONSTARTUP=~/.pyinit
 
 # export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2.6
+export PYTHONPATH=/usr/local/bin/python2.7:$PYTHONPATH
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2.7
 export WORKON_HOME=~/.virtualenvs
 export PROJECT_HOME=$HOME/develop
 export VIRTUALENV_ROOT=$WORKON_HOME
 
-export JYTHON_HOME=$(brew --prefix jython)/libexec
+# export JYTHON_HOME=$(brew --prefix jython)/libexec
+export JYTHON_HOME=/usr/local/Cellar/jython/2.5.3b1/libexec
 export PATH=$PATH:$JYTHON_HOME/bin
 
 . /usr/local/bin/virtualenvwrapper.sh
@@ -76,7 +78,7 @@ echo "PYTHON: $(python -c 'import sys; print sys.prefix')"
 
 #---------------------------------------------------------------------
 # NODE.JS
-export NODE_PATH=/usr/local/lib/node
+export NODE_PATH=/usr/local/share/npm/lib
 export JS_CMD=node
 
 #---------------------------------------------------------------------
@@ -97,3 +99,5 @@ alias serve="python -mSimpleHTTPServer"
 #---------------------------------------------------------------------
 # direnv hook
 eval `direnv hook $0`
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

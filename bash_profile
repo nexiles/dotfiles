@@ -78,3 +78,5 @@ complete -C "mite auto-complete" mite
 eval `direnv hook $0`
 
 
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
