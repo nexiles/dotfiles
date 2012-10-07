@@ -1,0 +1,140 @@
+# This is the default .slate file.
+# If no ~/.slate file exists this is the file that will be used.
+
+config defaultToCurrentScreen true
+config nudgePercentOf screenSize
+config resizePercentOf screenSize
+
+# Monitor Aliases
+alias mon-laptop      1680x1050
+alias mon-thunderbolt 2560x1440
+alias mon-hp22inch    1920x1080
+
+# size aliases
+alias sz-full  screenOriginX;screenOriginY                               screenSizeX;screenSizeY
+alias sz-bot   screenOriginX;screenOriginY+screenSizeY/2                 screenSizeX;screenSizeY/2       
+alias sz-bot-l screenOriginX;screenOriginY+screenSizeY/2                 screenSizeX/3;screenSizeY/2     
+alias sz-bot-m screenOriginX+screenSizeX/3;screenOriginY+screenSizeY/2   screenSizeX/3;screenSizeY/2     
+alias sz-bot-r screenOriginX+2*screenSizeX/3;screenOriginY+screenSizeY/2 screenSizeX/3;screenSizeY/2     
+alias sz-mid   screenOriginX+screenSizeX/8;screenOriginY+screenSizeY/8   3*screenSizeX/4;3*screenSizeY/4 
+alias sz-top   screenOriginX;screenOriginY                               screenSizeX;screenSizeY/2       
+alias sz-top-l screenOriginX;screenOriginY                               screenSizeX/2;screenSizeY/2     
+alias sz-top-m screenOriginX+screenSizeX/6;screenOriginY                 2*screenSizeX/3;screenSizeY/2   
+alias sz-top-r screenOriginX+screenSizeX/2;screenOriginY                 screenSizeX/2;screenSizeY/2     
+alias sz-left  screenOriginX;screenOriginY                               screenSizeX/2;screenSizeY       
+alias sz-right screenOriginX+screenSizeX/2;screenOriginY                 screenSizeX/2;screenSizeY       
+
+# Position Aliases
+alias 1-chat  move screenOriginX;screenOriginY                               screenSizeX/9;screenSizeY       ${mon-laptop}
+alias 1-main  move screenOriginX+screenSizeX/9;screenOriginY                 8*screenSizeX/9;screenSizeY     ${mon-laptop}
+alias 1-full  move ${sz-full}                                                                                ${mon-laptop}
+alias 1-left  move screenOriginX;screenOriginY                               screenSizeX/2;screenSizeY       ${mon-laptop}
+alias 1-right move screenOriginX+screenSizeX/2;screenOriginY                 screenSizeX/2;screenSizeY       ${mon-laptop}
+alias 1-bot   move screenOriginX;screenOriginY+screenSizeY/2                 screenSizeX;screenSizeY/2       ${mon-laptop}
+alias 1-bot-l move screenOriginX;screenOriginY+screenSizeY/2                 screenSizeX/3;screenSizeY/2     ${mon-laptop}
+alias 1-bot-m move screenOriginX+screenSizeX/3;screenOriginY+screenSizeY/2   screenSizeX/3;screenSizeY/2     ${mon-laptop}
+alias 1-bot-r move screenOriginX+2*screenSizeX/3;screenOriginY+screenSizeY/2 screenSizeX/3;screenSizeY/2     ${mon-laptop}
+alias 1-mid   move screenOriginX+screenSizeX/8;screenOriginY+screenSizeY/8   3*screenSizeX/4;3*screenSizeY/4 ${mon-laptop}
+alias 1-top   move screenOriginX;screenOriginY                               screenSizeX;screenSizeY/2       ${mon-laptop}
+alias 1-top-l move screenOriginX;screenOriginY                               screenSizeX/2;screenSizeY/2     ${mon-laptop}
+alias 1-top-m move screenOriginX+screenSizeX/6;screenOriginY                 2*screenSizeX/3;screenSizeY/2   ${mon-laptop}
+alias 1-top-r move screenOriginX+screenSizeX/2;screenOriginY                 screenSizeX/2;screenSizeY/2     ${mon-laptop}
+
+alias 2-bot   move screenOriginX;screenOriginY+screenSizeY/2                 screenSizeX;screenSizeY/2       ${mon-thunderbolt}
+alias 2-bot-l move screenOriginX;screenOriginY+screenSizeY/2                 screenSizeX/3;screenSizeY/2     ${mon-thunderbolt}
+alias 2-bot-m move screenOriginX+screenSizeX/3;screenOriginY+screenSizeY/2   screenSizeX/3;screenSizeY/2     ${mon-thunderbolt}
+alias 2-bot-r move screenOriginX+2*screenSizeX/3;screenOriginY+screenSizeY/2 screenSizeX/3;screenSizeY/2     ${mon-thunderbolt}
+alias 2-mid   move screenOriginX+screenSizeX/8;screenOriginY+screenSizeY/8   3*screenSizeX/4;3*screenSizeY/4 ${mon-thunderbolt}
+alias 2-top   move screenOriginX;screenOriginY                               screenSizeX;screenSizeY/2       ${mon-thunderbolt}
+alias 2-top-l move screenOriginX;screenOriginY                               screenSizeX/2;screenSizeY/2     ${mon-thunderbolt}
+alias 2-top-m move screenOriginX+screenSizeX/6;screenOriginY                 2*screenSizeX/3;screenSizeY/2   ${mon-thunderbolt}
+alias 2-top-r move screenOriginX+screenSizeX/2;screenOriginY                 screenSizeX/2;screenSizeY/2     ${mon-thunderbolt}
+alias 2-left  move screenOriginX;screenOriginY                               screenSizeX/2;screenSizeY       ${mon-thunderbolt}
+alias 2-right move screenOriginX+screenSizeX/2;screenOriginY                 screenSizeX/2;screenSizeY       ${mon-thunderbolt}
+
+alias 3-l-bot move screenOriginX;screenOriginY+screenSizeY/2                 screenSizeX/2;screenSizeY/2     ${mon-hp22inch}
+alias 3-l-top move screenOriginX;screenOriginY                               screenSizeX/2;screenSizeY/2     ${mon-hp22inch}
+alias 3-right move screenOriginX+screenSizeX/2;screenOriginY                 screenSizeX/2;screenSizeY       ${mon-hp22inch}
+
+# 3 Monitor layout
+layout 3monitors 'iTerm':SORT_TITLE                       ${2-bot-l} | ${2-bot-m} | ${2-bot-r}
+layout 3monitors 'Google Chrome':REPEAT                   ${1-main}
+layout 3monitors 'MacVim'                                 ${2-top-r} | ${2-top-l} | ${2-top-m}
+layout 3monitors 'Xcode':REPEAT                           ${2-top}
+layout 3monitors 'Eclipse':REPEAT                         ${2-bot}
+layout 3monitors 'Spotify':REPEAT                         ${1-main}
+
+# 1 Monitor layout
+layout 1monitor 'Terminal':SORT_TITLE,REPEAT             ${1-left} | ${1-right}
+layout 1monitor 'Google Chrome':REPEAT                   ${1-full}
+layout 1monitor 'MacVim':REPEAT                          ${1-full}
+
+# Layout bindings
+bind 1:ctrl layout 1monitor
+bind 2:ctrl grid padding:5 1680x1050:16,9 1050x1680:9,16
+
+# Default Layouts
+default 3monitors resolutions:${mon-laptop};${mon-thunderbolt};${mon-hp22inch}
+default 1monitor  resolutions:${mon-laptop}
+
+# Resize Bindings
+bind right:alt       resize +10% +0
+bind left:alt        resize -10% +0
+bind up:alt          resize +0   -10%
+bind down:alt        resize +0   +10%
+bind right:ctrl;alt  resize -10% +0 bottom-right
+bind left:ctrl;alt   resize +10% +0 bottom-right
+bind up:ctrl;alt     resize +0   +10% bottom-right
+bind down:ctrl;alt   resize +0   -10% bottom-right
+
+# Move Bindings
+bind m:ctrl;alt;cmd       chain move ${sz-full} | move ${sz-mid}
+bind down:ctrl;alt;cmd    chain move ${sz-top} | move ${sz-mid} | move ${sz-bot} | move ${sz-mid}
+bind up:ctrl;alt;cmd      chain move ${sz-bot} | move ${sz-mid} | move ${sz-top} | move ${sz-mid}
+bind left:ctrl;alt;cmd    chain move ${sz-right} | move ${sz-mid} | move ${sz-left} | move ${sz-mid}
+bind right:ctrl;alt;cmd   chain move ${sz-left} | move ${sz-mid} | move ${sz-right} | move ${sz-mid}
+
+# Push Bindings
+# ----------------------------------------------------------------------------------------------------------
+# modal key bindings
+# ----------------------------------------------------------------------------------------------------------
+# bind right:f1  push right bar-resize:screenSizeX/2
+# bind left:f1   push left  bar-resize:screenSizeX/2
+# bind up:f1     push up    bar-resize:screenSizeY/2
+# bind down:f1   push down  bar-resize:screenSizeY/2
+bind down:f1     chain move ${sz-bot} | move ${sz-mid}
+bind up:f1       chain move ${sz-top} | move ${sz-mid}
+bind left:f1     chain move ${sz-left} | move ${sz-mid}
+bind right:f1    chain move ${sz-right} | move ${sz-mid}
+bind m:f1        chain move ${sz-full} | move ${sz-mid}
+bind 1:f1        layout 1monitor
+bind g:f1        grid padding:5 1680x1050:16,9 1050x1680:9,16
+
+# Nudge Bindings
+bind right:shift;alt nudge +10% +0
+bind left:shift;alt  nudge -10% +0
+bind up:shift;alt    nudge +0   -10%
+bind down:shift;alt  nudge +0   +10%
+
+# Throw Bindings
+bind 1:ctrl;alt         throw 0 resize
+bind 2:ctrl;alt         throw 1 resize
+bind 3:ctrl;alt         throw 2 resize
+bind right:ctrl;alt;cmd throw right resize
+bind left:ctrl;alt;cmd  throw left  resize
+bind up:ctrl;alt;cmd    throw up    resize
+bind down:ctrl;alt;cmd  throw down  resize
+
+# Focus Bindings
+bind right:shift;cmd    focus right
+bind left:shift;cmd     focus left
+bind up:shift;cmd       focus up
+bind down:shift;cmd     focus down
+# bind up:cmd;alt   focus behind
+# bind down:cmd;alt focus behind
+
+
+# Window Hints
+bind esc:cmd hint
+
+bind tab:ctrl switch
