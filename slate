@@ -7,8 +7,8 @@ config resizePercentOf screenSize
 
 # Monitor Aliases
 alias mon-laptop      1680x1050
+alias mon-syncmaster  1920x1080
 alias mon-thunderbolt 2560x1440
-alias mon-hp22inch    1920x1080
 
 # size aliases
 alias sz-full  screenOriginX;screenOriginY                               screenSizeX;screenSizeY
@@ -40,41 +40,41 @@ alias 1-top-l move screenOriginX;screenOriginY                               scr
 alias 1-top-m move screenOriginX+screenSizeX/6;screenOriginY                 2*screenSizeX/3;screenSizeY/2   ${mon-laptop}
 alias 1-top-r move screenOriginX+screenSizeX/2;screenOriginY                 screenSizeX/2;screenSizeY/2     ${mon-laptop}
 
-alias 2-bot   move screenOriginX;screenOriginY+screenSizeY/2                 screenSizeX;screenSizeY/2       ${mon-thunderbolt}
-alias 2-bot-l move screenOriginX;screenOriginY+screenSizeY/2                 screenSizeX/3;screenSizeY/2     ${mon-thunderbolt}
-alias 2-bot-m move screenOriginX+screenSizeX/3;screenOriginY+screenSizeY/2   screenSizeX/3;screenSizeY/2     ${mon-thunderbolt}
-alias 2-bot-r move screenOriginX+2*screenSizeX/3;screenOriginY+screenSizeY/2 screenSizeX/3;screenSizeY/2     ${mon-thunderbolt}
-alias 2-mid   move screenOriginX+screenSizeX/8;screenOriginY+screenSizeY/8   3*screenSizeX/4;3*screenSizeY/4 ${mon-thunderbolt}
-alias 2-top   move screenOriginX;screenOriginY                               screenSizeX;screenSizeY/2       ${mon-thunderbolt}
-alias 2-top-l move screenOriginX;screenOriginY                               screenSizeX/2;screenSizeY/2     ${mon-thunderbolt}
-alias 2-top-m move screenOriginX+screenSizeX/6;screenOriginY                 2*screenSizeX/3;screenSizeY/2   ${mon-thunderbolt}
-alias 2-top-r move screenOriginX+screenSizeX/2;screenOriginY                 screenSizeX/2;screenSizeY/2     ${mon-thunderbolt}
-alias 2-left  move screenOriginX;screenOriginY                               screenSizeX/2;screenSizeY       ${mon-thunderbolt}
-alias 2-right move screenOriginX+screenSizeX/2;screenOriginY                 screenSizeX/2;screenSizeY       ${mon-thunderbolt}
+alias 2-main  move screenOriginX+screenSizeX/9;screenOriginY                 8*screenSizeX/9;screenSizeY     ${mon-syncmaster}
+alias 2-full  move ${sz-full}                                                                                ${mon-syncmaster}
+alias 2-bot   move screenOriginX;screenOriginY+screenSizeY/2                 screenSizeX;screenSizeY/2       ${mon-syncmaster}
+alias 2-bot-l move screenOriginX;screenOriginY+screenSizeY/2                 screenSizeX/3;screenSizeY/2     ${mon-syncmaster}
+alias 2-bot-m move screenOriginX+screenSizeX/3;screenOriginY+screenSizeY/2   screenSizeX/3;screenSizeY/2     ${mon-syncmaster}
+alias 2-bot-r move screenOriginX+2*screenSizeX/3;screenOriginY+screenSizeY/2 screenSizeX/3;screenSizeY/2     ${mon-syncmaster}
+alias 2-mid   move screenOriginX+screenSizeX/8;screenOriginY+screenSizeY/8   3*screenSizeX/4;3*screenSizeY/4 ${mon-syncmaster}
+alias 2-top   move screenOriginX;screenOriginY                               screenSizeX;screenSizeY/2       ${mon-syncmaster}
+alias 2-top-l move screenOriginX;screenOriginY                               screenSizeX/2;screenSizeY/2     ${mon-syncmaster}
+alias 2-top-m move screenOriginX+screenSizeX/6;screenOriginY                 2*screenSizeX/3;screenSizeY/2   ${mon-syncmaster}
+alias 2-top-r move screenOriginX+screenSizeX/2;screenOriginY                 screenSizeX/2;screenSizeY/2     ${mon-syncmaster}
+alias 2-left  move screenOriginX;screenOriginY                               screenSizeX/2;screenSizeY       ${mon-syncmaster}
+alias 2-right move screenOriginX+screenSizeX/2;screenOriginY                 screenSizeX/2;screenSizeY       ${mon-syncmaster}
 
-alias 3-l-bot move screenOriginX;screenOriginY+screenSizeY/2                 screenSizeX/2;screenSizeY/2     ${mon-hp22inch}
-alias 3-l-top move screenOriginX;screenOriginY                               screenSizeX/2;screenSizeY/2     ${mon-hp22inch}
-alias 3-right move screenOriginX+screenSizeX/2;screenOriginY                 screenSizeX/2;screenSizeY       ${mon-hp22inch}
-
-# 3 Monitor layout
-layout 3monitors 'iTerm':SORT_TITLE                       ${2-bot-l} | ${2-bot-m} | ${2-bot-r}
-layout 3monitors 'Google Chrome':REPEAT                   ${1-main}
-layout 3monitors 'MacVim'                                 ${2-top-r} | ${2-top-l} | ${2-top-m}
-layout 3monitors 'Xcode':REPEAT                           ${2-top}
-layout 3monitors 'Eclipse':REPEAT                         ${2-bot}
-layout 3monitors 'Spotify':REPEAT                         ${1-main}
+alias 3-l-bot move screenOriginX;screenOriginY+screenSizeY/2                 screenSizeX/2;screenSizeY/2     ${mon-syncmaster}
+alias 3-l-top move screenOriginX;screenOriginY                               screenSizeX/2;screenSizeY/2     ${mon-syncmaster}
+alias 3-right move screenOriginX+screenSizeX/2;screenOriginY                 screenSizeX/2;screenSizeY       ${mon-syncmaster}
 
 # 1 Monitor layout
 layout 1monitor 'Terminal':SORT_TITLE,REPEAT             ${1-left} | ${1-right}
 layout 1monitor 'Google Chrome':REPEAT                   ${1-full}
 layout 1monitor 'MacVim':REPEAT                          ${1-full}
 
+# 2 Monitor layout
+layout 2monitor 'Terminal':SORT_TITLE,REPEAT             ${2-left} | ${2-right}
+layout 2monitor 'MacVim':REPEAT                          ${2-full}
+layout 2monitor 'Google Chrome':REPEAT                   ${1-full} | ${2-full}
+
 # Layout bindings
 bind 1:ctrl layout 1monitor
-bind 2:ctrl grid padding:5 1680x1050:16,9 1050x1680:9,16
+bind 2:ctrl layout 2monitor
 
 # Default Layouts
-default 3monitors resolutions:${mon-laptop};${mon-thunderbolt};${mon-hp22inch}
+default 3monitors resolutions:${mon-laptop};${mon-thunderbolt};${mon-syncmaster}
+default 2monitors resolutions:${mon-syncmaster};${mon-laptop}
 default 1monitor  resolutions:${mon-laptop}
 
 # Resize Bindings
@@ -92,7 +92,6 @@ bind m:ctrl;alt;cmd       chain move ${sz-full} | move ${sz-mid}
 bind down:ctrl;alt;cmd    chain move ${sz-top} | move ${sz-mid} | move ${sz-bot} | move ${sz-mid}
 bind up:ctrl;alt;cmd      chain move ${sz-bot} | move ${sz-mid} | move ${sz-top} | move ${sz-mid}
 bind left:ctrl;alt;cmd    chain move ${sz-right} | move ${sz-mid} | move ${sz-left} | move ${sz-mid}
-bind right:ctrl;alt;cmd   chain move ${sz-left} | move ${sz-mid} | move ${sz-right} | move ${sz-mid}
 
 # Push Bindings
 # ----------------------------------------------------------------------------------------------------------
@@ -108,6 +107,7 @@ bind left:f1     chain move ${sz-left} | move ${sz-mid}
 bind right:f1    chain move ${sz-right} | move ${sz-mid}
 bind m:f1        chain move ${sz-full} | move ${sz-mid}
 bind 1:f1        layout 1monitor
+bind 2:f1        layout 2monitor
 bind g:f1        grid padding:5 1680x1050:16,9 1050x1680:9,16
 
 # Nudge Bindings
