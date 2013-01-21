@@ -3,8 +3,7 @@
 # prompt and path
 export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:$PATH
 
-#export PS1='\[\033[01;32m\]\u@\h:\W\[\033[01;33m\]$(__git_ps1 "(%s)")\[\033[00m\]$ '
-export PS1="\`if [ \$? = 0 ]; then echo '\033[1;32m\033[0m'; else echo '\033[0;31m\033[0m' ; fi\` \[\033[00;37m\]\u@\h:\w\[\033[01;33m\] \`__git_ps1 '(%s)'\`\[\033[00m\]\n$ "
+export PS1='\[\033[01;32m\]\u@\h:\W\[\033[01;33m\]$(__git_ps1 "(%s)")\[\033[00m\]$ '
 
 #---------------------------------------------------------------------
 # env setup
@@ -80,3 +79,7 @@ eval `direnv hook $0`
 
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+export PATH=/Users/seletz/bin/Sencha/Cmd/3.0.0.250:$PATH
+
+export SENCHA_CMD_3_0_0="/Users/seletz/bin/Sencha/Cmd/3.0.0.250"
