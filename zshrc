@@ -55,7 +55,7 @@ export PATH=~/bin:/usr/local/share/python:/usr/local/bin:/usr/local/sbin:/usr/lo
 export LANG="de_DE.UTF-8"
 # gnuchlog vim plugin
 export EMAIL="Stefan Eletzhofer <stefan.eletzhofer@nexiles.de>"
-export EDITOR="/Users/seletz/Applications/MacVim.app/Contents/MacOS/Vim -g -f "
+export EDITOR="gvim"
 
 #---------------------------------------------------------------------
 # python
@@ -68,8 +68,8 @@ export WORKON_HOME=~/.virtualenvs
 export PROJECT_HOME=$HOME/develop
 export VIRTUALENV_ROOT=$WORKON_HOME
 
-# export JYTHON_HOME=$(brew --prefix jython)/libexec
-export JYTHON_HOME=/usr/local/Cellar/jython/2.5.3b1/libexec
+export JYTHON_HOME=$(brew --prefix jython)/libexec
+# export JYTHON_HOME=/usr/local/Cellar/jython/2.5.3b1/libexec
 export PATH=$PATH:$JYTHON_HOME/bin
 
 . /usr/local/bin/virtualenvwrapper.sh

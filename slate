@@ -110,6 +110,11 @@ bind 1:f1        layout 1monitor
 bind 2:f1        layout 2monitor
 bind g:f1        grid padding:5 1680x1050:16,9 1050x1680:9,16
 
+bind t:f1        shell wait path:~/develop/nexiles '/Users/seletz/bin/mvim --servername nexiles.tools'
+bind a:f1        shell wait path:~/develop/nexiles '/Users/seletz/bin/mvim --servername nexiles.tools.api'
+bind s:f1        shell wait path:/Users/seletz '/Users/seletz/bin/mvim .slate'
+bind d:f1        shell wait path:/Users/seletz '/Users/seletz/bin/daily'
+
 # Nudge Bindings
 bind right:shift;alt nudge +10% +0
 bind left:shift;alt  nudge -10% +0
