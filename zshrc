@@ -29,7 +29,7 @@ ZSH_THEME="nanotech"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(osx git git-flow fabric groovy grails python)
+plugins=(osx git git-flow fabric python)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -48,14 +48,19 @@ esac
 
 #---------------------------------------------------------------------
 # prompt and path
-export PATH=~/bin:/usr/local/share/python:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/share/npm/bin:$PATH
+# export PATH=~/bin:/usr/local/share/python:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/share/npm/bin:$PATH
+export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/share/npm/bin:$PATH
 
 #---------------------------------------------------------------------
 # env setup
 export LANG="de_DE.UTF-8"
 # gnuchlog vim plugin
 export EMAIL="Stefan Eletzhofer <stefan.eletzhofer@nexiles.de>"
-export EDITOR="gvim"
+export EDITOR="vim"
+
+#---------------------------------------------------------------------
+# java
+export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.6/Home
 
 #---------------------------------------------------------------------
 # python
@@ -68,9 +73,17 @@ export WORKON_HOME=~/.virtualenvs
 export PROJECT_HOME=$HOME/develop
 export VIRTUALENV_ROOT=$WORKON_HOME
 
+
 export JYTHON_HOME=$(brew --prefix jython)/libexec
 # export JYTHON_HOME=/usr/local/Cellar/jython/2.5.3b1/libexec
 export PATH=$PATH:$JYTHON_HOME/bin
+
+# pip
+export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
+export PIP_REQUIRE_VIRTUALENV=true
+syspip(){
+   PIP_REQUIRE_VIRTUALENV="" pip "$@"
+}
 
 . /usr/local/bin/virtualenvwrapper.sh
 
@@ -98,6 +111,6 @@ alias serve="python -mSimpleHTTPServer"
 
 #---------------------------------------------------------------------
 # direnv hook
-eval `direnv hook $0`
+# eval `direnv hook $0`
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

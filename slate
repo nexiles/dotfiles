@@ -64,9 +64,9 @@ layout 1monitor 'Google Chrome':REPEAT                   ${1-full}
 layout 1monitor 'MacVim':REPEAT                          ${1-full}
 
 # 2 Monitor layout
-layout 2monitor 'Terminal':SORT_TITLE,REPEAT             ${2-left} | ${2-right}
+layout 2monitor 'Terminal':SORT_TITLE,REPEAT             ${2-full}
 layout 2monitor 'MacVim':REPEAT                          ${2-full}
-layout 2monitor 'Google Chrome':REPEAT                   ${1-full} | ${2-full}
+layout 2monitor 'Google Chrome':REPEAT                   ${2-full}
 
 # Layout bindings
 bind 1:ctrl layout 1monitor
@@ -78,20 +78,20 @@ default 2monitors resolutions:${mon-syncmaster};${mon-laptop}
 default 1monitor  resolutions:${mon-laptop}
 
 # Resize Bindings
-bind right:alt       resize +10% +0
-bind left:alt        resize -10% +0
-bind up:alt          resize +0   -10%
-bind down:alt        resize +0   +10%
-bind right:ctrl;alt  resize -10% +0 bottom-right
-bind left:ctrl;alt   resize +10% +0 bottom-right
-bind up:ctrl;alt     resize +0   +10% bottom-right
-bind down:ctrl;alt   resize +0   -10% bottom-right
+#bind right:alt       resize +10% +0
+#bind left:alt        resize -10% +0
+#bind up:alt          resize +0   -10%
+#bind down:alt        resize +0   +10%
+#bind right:ctrl;alt  resize -10% +0 bottom-right
+#bind left:ctrl;alt   resize +10% +0 bottom-right
+#bind up:ctrl;alt     resize +0   +10% bottom-right
+#bind down:ctrl;alt   resize +0   -10% bottom-right
 
 # Move Bindings
-bind m:ctrl;alt;cmd       chain move ${sz-full} | move ${sz-mid}
-bind down:ctrl;alt;cmd    chain move ${sz-top} | move ${sz-mid} | move ${sz-bot} | move ${sz-mid}
-bind up:ctrl;alt;cmd      chain move ${sz-bot} | move ${sz-mid} | move ${sz-top} | move ${sz-mid}
-bind left:ctrl;alt;cmd    chain move ${sz-right} | move ${sz-mid} | move ${sz-left} | move ${sz-mid}
+#bind m:ctrl;alt;cmd       chain move ${sz-full} | move ${sz-mid}
+#bind down:ctrl;alt;cmd    chain move ${sz-top} | move ${sz-mid} | move ${sz-bot} | move ${sz-mid}
+#bind up:ctrl;alt;cmd      chain move ${sz-bot} | move ${sz-mid} | move ${sz-top} | move ${sz-mid}
+#bind left:ctrl;alt;cmd    chain move ${sz-right} | move ${sz-mid} | move ${sz-left} | move ${sz-mid}
 
 # Push Bindings
 # ----------------------------------------------------------------------------------------------------------
@@ -106,14 +106,14 @@ bind up:f1       chain move ${sz-top} | move ${sz-mid}
 bind left:f1     chain move ${sz-left} | move ${sz-mid}
 bind right:f1    chain move ${sz-right} | move ${sz-mid}
 bind m:f1        chain move ${sz-full} | move ${sz-mid}
-bind 1:f1        layout 1monitor
-bind 2:f1        layout 2monitor
+bind 1:f1        throw 0 resize
+bind 2:f1        throw 1 resize
 bind g:f1        grid padding:5 1680x1050:16,9 1050x1680:9,16
 
-bind t:f1        shell wait path:~/develop/nexiles '/Users/seletz/bin/mvim --servername nexiles.tools'
-bind a:f1        shell wait path:~/develop/nexiles '/Users/seletz/bin/mvim --servername nexiles.tools.api'
-bind s:f1        shell wait path:/Users/seletz '/Users/seletz/bin/mvim .slate'
-bind d:f1        shell wait path:/Users/seletz '/Users/seletz/bin/daily'
+#bind t:f1        shell wait path:~/develop/nexiles '/Users/seletz/bin/mvim --servername nexiles.tools'
+#bind a:f1        shell wait path:~/develop/nexiles '/Users/seletz/bin/mvim --servername nexiles.tools.api'
+#bind s:f1        shell wait path:/Users/seletz '/Users/seletz/bin/mvim .slate'
+#bind d:f1        shell wait path:/Users/seletz '/Users/seletz/bin/daily'
 
 # Nudge Bindings
 bind right:shift;alt nudge +10% +0
