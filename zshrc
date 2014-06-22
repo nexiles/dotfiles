@@ -68,7 +68,7 @@ export EDITOR="vim"
 
 # export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2.6
 export PYTHONPATH=/usr/local/bin/python2.7:$PYTHONPATH
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2.7
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
 export WORKON_HOME=~/.virtualenvs
 export PROJECT_HOME=$HOME/develop
 export VIRTUALENV_ROOT=$WORKON_HOME
