@@ -9,30 +9,17 @@
         ui = true
 [alias]
 	st = status -s
+	stu = status -suno
 	ci = commit
 	co = checkout
 	dc = diff --cached
 	l  = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset'
         lol = log --pretty=oneline --abbrev-commit --graph --decorate
-	switch = !legit switch \"$@\"
-	branches = !legit branches
-	sprout = !legit sprout \"$@\"
-	unpublish = !legit unpublish \"$@\"
-	harvest = !legit harvest \"$@\"
-	sync = !legit sync \"$@\"
-	publish = !legit publish \"$@\"
-	graft = !legit graft \"$@\"
 [merge]
 	tool = opendiff
 [core]
 	excludesfile = /Users/seletz/.gitignore
 	whitespace = fix
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
 [github]
 	user = seletz
 [ghi]
