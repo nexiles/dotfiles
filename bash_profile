@@ -80,17 +80,5 @@ eval `direnv hook $0`
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
-export PATH=/Users/seletz/bin/Sencha/Cmd/3.0.0.250:$PATH
-
-export SENCHA_CMD_3_0_0="/Users/seletz/bin/Sencha/Cmd/4.0.0.203"
-
-export PATH=/Users/seletz/bin/Sencha/Cmd/3.0.2.288:$PATH
-
-export PATH=/tmp/Sencha/Cmd/3.1.0.256:$PATH
-
-export PATH=/Users/seletz/Applications/Sencha/Cmd/3.1.2.342:$PATH
-
-export PATH=/Users/seletz/bin/Sencha/Cmd/4.0.0.203:$PATH
-
 # added by Anaconda 1.8.0 installer
 export PATH="/Users/seletz/anaconda/bin:$PATH"

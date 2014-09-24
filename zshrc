@@ -60,7 +60,8 @@ export EDITOR="vim"
 
 #---------------------------------------------------------------------
 # java
-#export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.6/Home
+export JAVA_HOME=$(/usr/libexec/java_home -v1.7)
+echo "JAVA_HOME=$JAVA_HOME"
 
 #---------------------------------------------------------------------
 # python
@@ -108,6 +109,8 @@ alias ls="gls --color"
 alias la="ls -la"
 alias ll="ls -l"
 alias serve="python -mSimpleHTTPServer"
+
+alias mve='mvim --servername $(basename $VIRTUAL_ENV)'
 
 #---------------------------------------------------------------------
 # direnv hook

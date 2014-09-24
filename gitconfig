@@ -26,3 +26,6 @@
 	token = 63bd2d963cdc712291f23039c203ab341d6d2c15
 [push]
 	default = tracking
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f

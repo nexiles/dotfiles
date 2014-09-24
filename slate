@@ -102,9 +102,13 @@ default 1monitor  resolutions:${mon-laptop}
 # bind up:f1     push up    bar-resize:screenSizeY/2
 # bind down:f1   push down  bar-resize:screenSizeY/2
 bind down:f1     chain move ${sz-bot} | move ${sz-mid}
+bind down:cmd     chain move ${sz-bot} | move ${sz-mid}
 bind up:f1       chain move ${sz-top} | move ${sz-mid}
+bind up:cmd       chain move ${sz-top} | move ${sz-mid}
 bind left:f1     chain move ${sz-left} | move ${sz-mid}
+bind left:cmd     chain move ${sz-left} | move ${sz-mid}
 bind right:f1    chain move ${sz-right} | move ${sz-mid}
+bind right:cmd    chain move ${sz-right} | move ${sz-mid}
 bind m:f1        chain move ${sz-full} | move ${sz-mid}
 bind 1:f1        throw 0 resize
 bind 2:f1        throw 1 resize
