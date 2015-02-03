@@ -12,6 +12,7 @@
 	stu = status -suno
 	ci = commit
 	co = checkout
+	d = icdiff
 	dc = diff --cached
 	l  = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset'
         lol = log --pretty=oneline --abbrev-commit --graph --decorate
