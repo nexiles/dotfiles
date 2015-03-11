@@ -24,7 +24,7 @@
 [github]
 	user = seletz
 [ghi]
-	token = 63bd2d963cdc712291f23039c203ab341d6d2c15
+	token = !security find-internet-password -a seletz -s github.com -l 'ghi token' -w
 [push]
 	default = tracking
 [filter "media"]
