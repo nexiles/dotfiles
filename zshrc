@@ -112,8 +112,26 @@ alias serve="python -mSimpleHTTPServer"
 
 alias mve='mvim --servername $(basename $VIRTUAL_ENV)'
 
+# ovr git plugin
+alias gd="git icdiff"
+
 #---------------------------------------------------------------------
 # direnv hook
 # eval `direnv hook $0`
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+# vargrant vmware clone directory
+# Prevent cloning to a .vagrant dir which blows up time machine
+# backups.
+export VAGRANT_VMWARE_CLONE_DIRECTORY="~/.vagrant.d/vmware_clones"
+
+# Pyenv
+export PYENV_ROOT=/usr/local/opt/pyenv
+if which pyenv > /dev/null
+then
+    eval "$(pyenv init -)"
+fi
+
+# OPAM configuration
+. /Users/seletz/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
