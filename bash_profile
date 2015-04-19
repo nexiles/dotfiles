@@ -82,3 +82,5 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # added by Anaconda 1.8.0 installer
 export PATH="/Users/seletz/anaconda/bin:$PATH"
+
+export PATH=/Users/seletz/bin/Sencha/Cmd/5.1.0.26:$PATH

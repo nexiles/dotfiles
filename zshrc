@@ -97,7 +97,7 @@ export JS_CMD=node
 
 #---------------------------------------------------------------------
 # Ruby RVM
-source ~/.rvm/scripts/rvm
+# source ~/.rvm/scripts/rvm
 
 #---------------------------------------------------------------------
 # GROOVY
@@ -135,3 +135,10 @@ fi
 
 # OPAM configuration
 . /Users/seletz/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+
+# GO
+export PATH=$PATH:/usr/local/opt/go/libexec/bin
+export GOPATH=$HOME/develop/go
+
+# TheFuck
+alias fuck='$(thefuck $(fc -ln -1))'
