@@ -1,0 +1,30 @@
+<snippet>
+	<content><![CDATA[
+PY_DOC_DEF( ${2:Nx$1},
+"${1:ProMessageDisplay}(message) -> None\n"
+"\n"
+"Printes the message in creo's message area.\n"
+)
+PyObject *${2:Nx$1}(PyObject *self, PyObject *args)
+{
+	int			ret				=	0;
+	PyObject 	*pResult    	= NULL;
+	char    	*szMessage 		= NULL;
+
+	_DBG((dbg, "<${2:Nx$1}()" ));
+
+	ret = PyArg_ParseTuple( args, "s", &szMessage);
+	if ( !ret )			_DBGERR( dbg, ret );
+
+	${1:ProMessageDisplay}(msg, "USER %0s", szMessage);
+
+	PY_NONE(pResult);
+DONE:
+	_DBGPYOBJRET( dbg, pResult );
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>pyfunc</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c</scope>
+</snippet>

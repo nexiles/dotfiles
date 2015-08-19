@@ -1,0 +1,4 @@
+{
+    "shell_cmd": "/usr/local/bin/sbcl --disable-debugger --load $file",
+    "working_dir": "$file_path"
+}

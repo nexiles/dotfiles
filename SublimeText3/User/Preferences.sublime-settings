@@ -1,0 +1,23 @@
+{
+	"auto_complete_commit_on_tab": false,
+	"bold_folder_labels": true,
+	"color_scheme": "Packages/User/Solarized (Light) (SL) (SublimePythonIDE).tmTheme",
+	"ignored_packages":
+	[
+		"RestructuredText",
+		"Vintage"
+	],
+	"index_exclude_patterns":
+	[
+		"*.log",
+		"/Volumes/C$/ptc/starter2*"
+	],
+	"scroll_speed": 5.0,
+	"shift_tab_unindent": false,
+	"show_encoding": false,
+	"show_full_path": true,
+	"spacegray_sidebar_font_xlarge": true,
+	"theme": "Spacegray.sublime-theme",
+	"use_simple_full_screen": false,
+	"word_wrap": false
+}

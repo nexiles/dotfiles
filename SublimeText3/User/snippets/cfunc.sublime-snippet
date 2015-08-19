@@ -1,0 +1,32 @@
+<snippet>
+	<content><![CDATA[
+/*****************************************************************************
+ * ${1:name}()
+ *
+ * ${2:purpose}
+ *
+ * (IN)
+ * 		ARGNAME		DESCR
+ * (OUT)
+ * 		ARGNAME		DESCR
+ * (RETURN VALUE)
+ * 		VALUE		DESCR
+ */
+int $1(${3:void})
+{
+	int		ret	=	0;
+
+	_DBG((dbg, "<$1( )" ));
+
+	if (!$3)			_DBGERRX(dbg, "$3", NX_ERROR);
+
+DONE:
+	_DBGDRETURN( dbg, ret );
+}
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>func</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c</scope>
+</snippet>

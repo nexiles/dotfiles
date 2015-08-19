@@ -1,0 +1,33 @@
+<snippet>
+	<content><![CDATA[
+/****************************************************************************\
+ * Module:	${1:module name}
+ * programer: ${2:seletz}, nexiles GmbH
+ *
+ * ${3:description}
+ *
+ \****************************************************************************/
+
+#ifndef		_NX_${4:MODULE}_H
+#define		_NX_$4_H	1
+
+/*****************************************************************************/
+/* Includes */
+
+/*****************************************************************************/
+/* Defines */
+
+/*****************************************************************************/
+/* Types */
+
+/*****************************************************************************/
+/* Module API */
+
+#endif
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>mhead</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c</scope>
+</snippet>
