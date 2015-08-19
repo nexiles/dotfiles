@@ -7,6 +7,9 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="nanotech"
 
+# Fix path
+eval $(/usr/libexec/path_helper)
+
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
@@ -56,7 +59,7 @@ export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local
 export LANG="de_DE.UTF-8"
 # gnuchlog vim plugin
 export EMAIL="Stefan Eletzhofer <stefan.eletzhofer@nexiles.de>"
-export EDITOR="vim"
+export EDITOR="subl -nw"
 
 #---------------------------------------------------------------------
 # java
@@ -127,11 +130,11 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export VAGRANT_VMWARE_CLONE_DIRECTORY="~/.vagrant.d/vmware_clones"
 
 # Pyenv
-export PYENV_ROOT=/usr/local/opt/pyenv
-if which pyenv > /dev/null
-then
-    eval "$(pyenv init -)"
-fi
+#export PYENV_ROOT=/usr/local/opt/pyenv
+#if which pyenv > /dev/null
+#then
+    #eval "$(pyenv init -)"
+#fi
 
 # OPAM configuration
 . /Users/seletz/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
@@ -142,3 +145,11 @@ export GOPATH=$HOME/develop/go
 
 # TheFuck
 alias fuck='$(thefuck $(fc -ln -1))'
+
+source /Users/seletz/.iterm2_shell_integration.zsh
+
+# aws completion
+source /usr/local/share/zsh/site-functions/_aws
+
+export NVM_DIR="/Users/seletz/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
