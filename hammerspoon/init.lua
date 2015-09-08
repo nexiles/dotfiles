@@ -93,7 +93,8 @@ k:bind( modNone, 'f1', function() modalExit(); hs.grid.show() end)
 -- Centre window
 k:bind( modNone, 'c', cycleCalls( toGrid, {{.04, 0, 0.92, 1},{0.22, 0.025, 0.56, 0.95},{0.1, 0, 0.8, 1}} ) )
 -- Toggle between maximized and its initial size and position.
-k:bind( modNone, 'space', function() toggleMaximize(  hs.window.focusedWindow() ) end )
+k:bind( modNone, 'space', function() toggleMaximize(  hs.window.focusedWindow() ); k:exit() end )
+k:bind( modNone, 'm', function() toggleMaximize(  hs.window.focusedWindow() ); k:exit() end )
 -- Size/position to one side of the screen
 k:bind( modNone, 'left',  cycleCalls( toGrid, { {0, 0, 0.5, 1},   {0, 0, 0.6, 1},   {0, 0, 0.4, 1} } ));
 k:bind( modNone, 'right', cycleCalls( toGrid, { {0.5, 0, 0.5, 1}, {0.4, 0, 0.6, 1}, {0.6, 0, 0.4, 1} } ));
@@ -114,5 +115,5 @@ function reloadConfig(files)
         hs.reload()
     end
 end
-hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfig):start()
+hs.pathwatcher.new(os.getenv("HOME") .. "/dotfiles/hammerspoon/", reloadConfig):start()
 hs.alert.show("Config loaded")
