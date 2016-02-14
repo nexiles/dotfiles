@@ -58,6 +58,9 @@ function toggleMaximize( window )
     end
 
     local id = window:id()
+    if not id then
+    	return window
+    end
     if previousSizes[ id ] == nil then
         previousSizes[ id ] = window:frame()
         window:maximize(windowAnimationDuration)
