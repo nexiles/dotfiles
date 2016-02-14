@@ -148,8 +148,11 @@ alias fuck='$(thefuck $(fc -ln -1))'
 
 source /Users/seletz/.iterm2_shell_integration.zsh
 
+# Android SDK
+export ANDROID_HOME=/usr/local/opt/android-sdk
+
 # aws completion
 source /usr/local/share/zsh/site-functions/_aws
 
-export NVM_DIR="/Users/seletz/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+# NVM
+. $(brew --prefix nvm)/nvm.sh
