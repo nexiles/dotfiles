@@ -1,10 +1,12 @@
 {
+	"bootstrapped": true,
 	"in_process_packages":
 	[
 	],
 	"installed_packages":
 	[
 		"AdvancedNewFile",
+		"Alignment",
 		"All Autocomplete",
 		"AutoFileName",
 		"Babel",
@@ -14,11 +16,14 @@
 		"CTags",
 		"DashDoc",
 		"DocBlockr",
+		"EasyDiff",
 		"Elixir",
 		"ElixirSublime",
+		"Emmet",
 		"FileDiffs",
 		"Git",
 		"GitGutter",
+		"Indent XML",
 		"LiveReload",
 		"LiveStyle",
 		"LoremGibson",
@@ -44,6 +49,7 @@
 		"SublimePythonIDE",
 		"SublimeREPL",
 		"SublimeTmpl",
+		"SyncedSideBar",
 		"Theme - Brogrammer",
 		"Theme - Spacegray",
 		"TrailingSpaces",

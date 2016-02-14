@@ -8,7 +8,7 @@
 		"gutter_theme_excludes":
 		[
 		],
-		"lint_mode": "manual",
+		"lint_mode": "save only",
 		"linters":
 		{
 			"coffeelint":

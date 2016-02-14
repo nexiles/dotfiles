@@ -54,6 +54,8 @@
         ]
     },
 
+	{ "keys": ["super+alt+a"], "command": "alignment" },
+
 	//////////////////////////////////////////////////////////////////////
 	// date and time macros
 	{"keys": ["super+alt+ctrl+d"], "command": "add_date_time_stamp" },

@@ -2,6 +2,7 @@
 	"auto_complete_commit_on_tab": false,
 	"bold_folder_labels": true,
 	"color_scheme": "Packages/User/Solarized (Light) (SL) (SublimePythonIDE).tmTheme",
+	"font_size": 18,
 	"ignored_packages":
 	[
 		"RestructuredText",
@@ -9,8 +10,10 @@
 	],
 	"index_exclude_patterns":
 	[
+		"/Volumes/C$/ptc/starter2*",
 		"*.log",
-		"/Volumes/C$/ptc/starter2*"
+		"/Users/seletz/develop/wt/src_10.2.20.00*",
+		"/Users/seletz/develop/nexiles/trox.batch.loader/.pip-build*"
 	],
 	"scroll_speed": 5.0,
 	"shift_tab_unindent": false,
