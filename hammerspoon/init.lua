@@ -4,11 +4,11 @@ local windowAnimationDuration = 0
 grid.GRIDHEIGHT = 4
 grid.GRIDWIDTH  = 4
 grid.HINTS = {
-	{ "f1", "f2", "f3", "f4", "f5", "f6", "f7", "f8", "f9", "f10" },
-	{ "1", "2", "3", "4", "5", "6", "7", "8", "9", "0" },
-	{ "Q", "W", "E", "R", "T", "Z", "U", "I", "O", "P" },
-	{ "A", "S", "D", "F", "G", "H", "J", "K", "L", ";" },
-	{ "Y", "X", "C", "V", "B", "N", "M", ",", ".", "/" } }
+    { "f1", "f2", "f3", "f4", "f5", "f6", "f7", "f8", "f9", "f10" },
+    { "1", "2", "3", "4", "5", "6", "7", "8", "9", "0" },
+    { "Q", "W", "E", "R", "T", "Z", "U", "I", "O", "P" },
+    { "A", "S", "D", "F", "G", "H", "J", "K", "L", ";" },
+    { "Y", "X", "C", "V", "B", "N", "M", ",", ".", "/" } }
 
 ---------------------------------------------------------------------
 ---------------------------------------------------------------------
@@ -59,7 +59,7 @@ function toggleMaximize( window )
 
     local id = window:id()
     if not id then
-    	return window
+        return window
     end
     if previousSizes[ id ] == nil then
         previousSizes[ id ] = window:frame()
@@ -81,18 +81,23 @@ k:bind( modNone, "escape", function() k:exit() end)
 k:bind( modNone, "return", function() k:exit() end)
 
 function k:entered()
-	hs.alert.show('Window Manager', 99999)
+    hs.alert.show('Window Manager', 99999)
 end
 
 function k:exited()
-	hs.alert.closeAll()
+    hs.alert.closeAll()
 end
+
 
 function modalExit()
-	k:exit()
+    k:exit()
 end
 
-k:bind( modNone, 'f1', function() modalExit(); hs.grid.show() end)
+k:bind( modNone, 'g', function()
+    --modalExit()
+    hs.grid.show()
+end)
+
 -- Centre window
 k:bind( modNone, 'c', cycleCalls( toGrid, {{.04, 0, 0.92, 1},{0.22, 0.025, 0.56, 0.95},{0.1, 0, 0.8, 1}} ) )
 -- Toggle between maximized and its initial size and position.
@@ -103,6 +108,11 @@ k:bind( modNone, 'left',  cycleCalls( toGrid, { {0, 0, 0.5, 1},   {0, 0, 0.6, 1}
 k:bind( modNone, 'right', cycleCalls( toGrid, { {0.5, 0, 0.5, 1}, {0.4, 0, 0.6, 1}, {0.6, 0, 0.4, 1} } ));
 k:bind( modNone, 'up',    function() toGrid( {0, 0,   1, 0.3 } ) end )
 k:bind( modNone, 'down',  function() toGrid( {0, 0.7, 1, 0.3 } ) end )
+
+hs.hotkey.bind( "cmd", 'left',  cycleCalls( toGrid, { {0, 0, 0.5, 1},   {0, 0, 0.6, 1},   {0, 0, 0.4, 1}, {0, 0, 1, 1} } ));
+hs.hotkey.bind( "cmd", 'right', cycleCalls( toGrid, { {0.5, 0, 0.5, 1}, {0.4, 0, 0.6, 1}, {0.6, 0, 0.4, 1}, {0, 0, 1, 1} } ));
+hs.hotkey.bind( "cmd", 'up',    cycleCalls( toGrid, { {0, 0, 1.0, 0.5},  {0, 0, 0.5, 0.5},   {0, 0, 0.6, 0.5},   {0, 0, 0.4, 0.5}, {0.5, 0, 0.5, 0.5}, {0.4, 0, 0.6, 0.5}, {0.6, 0, 0.4, 0.5} } ));
+hs.hotkey.bind( "cmd", 'down',  cycleCalls( toGrid, { {0, 0.5, 1.0, 0.5},{0, 0.5, 0.5, 0.5},   {0, 0.5, 0.6, 0.5},   {0, 0.5, 0.4, 0.5}, {0.5, 0.5, 0.5, 0.5}, {0.4, 0.5, 0.6, 0.5}, {0.6, 0.5, 0.4, 0.5} } ));
 
 ---------------------------------------------------------------------
 ---------------------------------------------------------------------
@@ -120,3 +130,31 @@ function reloadConfig(files)
 end
 hs.pathwatcher.new(os.getenv("HOME") .. "/dotfiles/hammerspoon/", reloadConfig):start()
 hs.alert.show("Config loaded")
+
+
+local usbWatcher = nil
+
+-- This is our usbWatcher function
+-- lock when yubikey is removed
+function usbDeviceCallback(data)
+    -- this line will let you know the name of each usb device you connect, useful for the string match below
+    hs.notify.show("USB", "You just connected", data["productName"], "")
+    -- Replace "Yubikey" with the name of the usb device you want to use.
+    if string.match(data["productName"], "iPhone") then
+        if (data["eventType"] == "added") then
+            hs.notify.show("iPhone", "You just connected", data["productName"], "")
+            -- wake the screen up, so knock will activate
+            -- get knock here http://www.knocktounlock.com
+            os.execute("caffeinate -u -t 5")
+        elseif (data["eventType"] == "removed") then
+            -- replace +000000000000 with a phone number registered to iMessage
+            hs.messages.iMessage("+49 151 58558096", "Your iPhone was just removed from your Work MacBook.")
+            -- this locks to screensaver
+            os.execute("pmset displaysleepnow")
+       end
+   end
+end
+
+-- Start the usb watcher
+usbWatcher = hs.usb.watcher.new(usbDeviceCallback)
+usbWatcher:start()
