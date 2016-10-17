@@ -114,6 +114,9 @@ hs.hotkey.bind( "cmd", 'right', cycleCalls( toGrid, { {0.5, 0, 0.5, 1}, {0.4, 0,
 hs.hotkey.bind( "cmd", 'up',    cycleCalls( toGrid, { {0, 0, 1.0, 0.5},  {0, 0, 0.5, 0.5},   {0, 0, 0.6, 0.5},   {0, 0, 0.4, 0.5}, {0.5, 0, 0.5, 0.5}, {0.4, 0, 0.6, 0.5}, {0.6, 0, 0.4, 0.5} } ));
 hs.hotkey.bind( "cmd", 'down',  cycleCalls( toGrid, { {0, 0.5, 1.0, 0.5},{0, 0.5, 0.5, 0.5},   {0, 0.5, 0.6, 0.5},   {0, 0.5, 0.4, 0.5}, {0.5, 0.5, 0.5, 0.5}, {0.4, 0.5, 0.6, 0.5}, {0.6, 0.5, 0.4, 0.5} } ));
 
+hs.hotkey.bind( "cmd ctrl", 'left',  cycleCalls( toGrid, { {0*0.33, 0, 0.33, 1},   {1*0.33, 0, 0.33, 1},   {2*0.33, 0, 0.33, 1} } ));
+hs.hotkey.bind( "cmd ctrl", 'right',  cycleCalls( toGrid, { {2*0.33, 0, 0.33, 1},   {1*0.33, 0, 0.33, 1},   {0*0.33, 0, 0.33, 1} } ));
+
 ---------------------------------------------------------------------
 ---------------------------------------------------------------------
 -- config reloading
@@ -142,10 +145,10 @@ function usbDeviceCallback(data)
     -- Replace "Yubikey" with the name of the usb device you want to use.
     if string.match(data["productName"], "iPhone") then
         if (data["eventType"] == "added") then
-            hs.notify.show("iPhone", "You just connected", data["productName"], "")
+            -- hs.notify.show("iPhone", "You just connected", data["productName"], "")
             -- wake the screen up, so knock will activate
             -- get knock here http://www.knocktounlock.com
-            os.execute("caffeinate -u -t 5")
+            -- os.execute("caffeinate -u -t 5")
         elseif (data["eventType"] == "removed") then
             -- replace +000000000000 with a phone number registered to iMessage
             hs.messages.iMessage("+49 151 58558096", "Your iPhone was just removed from your Work MacBook.")

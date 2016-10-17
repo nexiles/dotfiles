@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="nanotech"
+ZSH_THEME="agnoster"
 
 # Fix path
 eval $(/usr/libexec/path_helper)
@@ -32,7 +32,8 @@ eval $(/usr/libexec/path_helper)
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(osx git git-flow fabric python)
+#plugins=(osx git git-flow fabric python)
+plugins=(osx git git-flow)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -52,7 +53,8 @@ esac
 #---------------------------------------------------------------------
 # prompt and path
 # export PATH=~/bin:/usr/local/share/python:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/share/npm/bin:$PATH
-export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/share/npm/bin:$PATH
+export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/share/npm/bin:/usr/local/opt/macvim/bin:$PATH
+export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/share/npm/bin:/usr/local/opt/macvim/bin:/usr/local/opt/vim/bin:$PATH
 
 #---------------------------------------------------------------------
 # env setup
@@ -63,14 +65,14 @@ export EDITOR="subl -nw"
 
 #---------------------------------------------------------------------
 # java
-export JAVA_HOME=$(/usr/libexec/java_home -v1.7)
+export JAVA_HOME=$(/usr/libexec/java_home -v1.8)
 echo "JAVA_HOME=$JAVA_HOME"
 
 #---------------------------------------------------------------------
 # python
+echo -n "Python ..."
 #export PYTHONSTARTUP=~/.pyinit
 
-# export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2.6
 export PYTHONPATH=/usr/local/bin/python2.7:$PYTHONPATH
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
 export WORKON_HOME=~/.virtualenvs
@@ -78,9 +80,6 @@ export PROJECT_HOME=$HOME/develop
 export VIRTUALENV_ROOT=$WORKON_HOME
 
 
-export JYTHON_HOME=$(brew --prefix jython)/libexec
-# export JYTHON_HOME=/usr/local/Cellar/jython/2.5.3b1/libexec
-export PATH=$PATH:$JYTHON_HOME/bin
 
 # pip
 export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
@@ -90,21 +89,29 @@ syspip(){
 }
 
 . /usr/local/bin/virtualenvwrapper.sh
+echo "done"
 
-echo "PYTHON: $(python -c 'import sys; print sys.prefix')"
+echo -n "jython ..."
+export JYTHON_HOME=$(brew --prefix jython)/libexec
+export PATH=$PATH:$JYTHON_HOME/bin
+echo "done"
+
+# echo "PYTHON: $(python -c 'import sys; print sys.prefix')"
 
 #---------------------------------------------------------------------
 # NODE.JS
+echo -n "node ..."
 export NODE_PATH=/usr/local/share/npm/lib
 export JS_CMD=node
-
-#---------------------------------------------------------------------
-# Ruby RVM
-# source ~/.rvm/scripts/rvm
+# NVM
+#export NVM_DIR=~/.nvm
+#test -d "$NVM_DIR" || mkdir -p "$NVM_DIR"
+#. $(brew --prefix nvm)/nvm.sh
+echo "done"
 
 #---------------------------------------------------------------------
 # GROOVY
-export GROOVY_HOME=$(brew --prefix groovy)/libexec
+# export GROOVY_HOME=$(brew --prefix groovy)/libexec
 
 #---------------------------------------------------------------------
 # alias
@@ -118,10 +125,6 @@ alias mve='mvim --servername $(basename $VIRTUAL_ENV)'
 # ovr git plugin
 alias gd="git icdiff"
 
-#---------------------------------------------------------------------
-# direnv hook
-# eval `direnv hook $0`
-
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # vargrant vmware clone directory
@@ -129,30 +132,17 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 # backups.
 export VAGRANT_VMWARE_CLONE_DIRECTORY="~/.vagrant.d/vmware_clones"
 
-# Pyenv
-#export PYENV_ROOT=/usr/local/opt/pyenv
-#if which pyenv > /dev/null
-#then
-    #eval "$(pyenv init -)"
-#fi
-
 # OPAM configuration
-. /Users/seletz/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+# . /Users/seletz/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
 # GO
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
 export GOPATH=$HOME/develop/go
 
-# TheFuck
-alias fuck='$(thefuck $(fc -ln -1))'
-
-source /Users/seletz/.iterm2_shell_integration.zsh
+# source /Users/seletz/.iterm2_shell_integration.zsh
 
 # Android SDK
 export ANDROID_HOME=/usr/local/opt/android-sdk
 
 # aws completion
-source /usr/local/share/zsh/site-functions/_aws
-
-# NVM
-. $(brew --prefix nvm)/nvm.sh
+# source /usr/local/share/zsh/site-functions/_aws
