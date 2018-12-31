@@ -1,4 +1,5 @@
 {
+	"animation_enabled": false,
 	"auto_complete_commit_on_tab": false,
 	"bold_folder_labels": true,
 	"color_scheme": "Packages/User/Solarized (Light) (SL) (SublimePythonIDE).tmTheme",
@@ -21,6 +22,7 @@
 	"show_full_path": true,
 	"spacegray_sidebar_font_xlarge": true,
 	"theme": "Spacegray.sublime-theme",
+	"tree_animation_enabled": false,
 	"use_simple_full_screen": false,
 	"word_wrap": false
 }

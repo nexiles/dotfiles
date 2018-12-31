@@ -1,4 +1,3 @@
-
 ;;; The following lines added by ql:add-to-init-file:
 #-quicklisp
 (let ((quicklisp-init (merge-pathnames "quicklisp/setup.lisp"
@@ -6,23 +5,6 @@
   (when (probe-file quicklisp-init)
     (load quicklisp-init)))
 
-;(ql:quickload "cffi")
+(setf sb-impl::*default-external-format* :utf-8)
+;; (setf *print-case* :downcase)
 
-#|(load (merge-pathnames "develop/lisp/sbcl-readline/sbcl-readline.lisp"
-                       (user-homedir-pathname)))|#
-
-;;; The following lines added by ql:add-to-init-file:
-#-quicklisp
-(let ((quicklisp-init (merge-pathnames "quicklisp/setup.lisp"
-                                       (user-homedir-pathname))))
-  (when (probe-file quicklisp-init)
-    (load quicklisp-init)))
-
-;;; Check for --no-linedit command-line option.
-;;;(if (member "--no-linedit" sb-ext:*posix-argv* :test 'equal)
-    ;;;(setf sb-ext:*posix-argv*
-      ;;;(remove "--no-linedit" sb-ext:*posix-argv* :test 'equal))
-    ;;;(when (interactive-stream-p *terminal-io*)
-      ;;;(require :sb-aclrepl)
-      ;;;(require :linedit)
-      ;;;(funcall (intern "INSTALL-REPL" :linedit) :wrap-current t)))

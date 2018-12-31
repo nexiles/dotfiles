@@ -53,7 +53,6 @@ esac
 #---------------------------------------------------------------------
 # prompt and path
 # export PATH=~/bin:/usr/local/share/python:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/share/npm/bin:$PATH
-export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/share/npm/bin:/usr/local/opt/macvim/bin:$PATH
 export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/share/npm/bin:/usr/local/opt/macvim/bin:/usr/local/opt/vim/bin:$PATH
 
 #---------------------------------------------------------------------
@@ -61,7 +60,13 @@ export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local
 export LANG="de_DE.UTF-8"
 # gnuchlog vim plugin
 export EMAIL="Stefan Eletzhofer <stefan.eletzhofer@nexiles.de>"
-export EDITOR="subl -nw"
+export EDITOR="vim"
+
+# Homebrew:
+# Error: GitHub API Error: API rate limit exceeded for 149.172.104.72. (But
+# here's the good news: Authenticated requests get a higher rate limit. Check
+# out the documentation for more details.)
+export HOMEBREW_GITHUB_API_TOKEN="810e6f0a22cd05902e055ffa878e4f3a25eb05f2"
 
 #---------------------------------------------------------------------
 # java
@@ -70,44 +75,42 @@ echo "JAVA_HOME=$JAVA_HOME"
 
 #---------------------------------------------------------------------
 # python
-echo -n "Python ..."
+#echo -n "Python ..."
 #export PYTHONSTARTUP=~/.pyinit
 
-export PYTHONPATH=/usr/local/bin/python2.7:$PYTHONPATH
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
-export WORKON_HOME=~/.virtualenvs
-export PROJECT_HOME=$HOME/develop
-export VIRTUALENV_ROOT=$WORKON_HOME
-
-
+#export PYTHONPATH=/usr/local/bin/python2.7:$PYTHONPATH
+#export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2
+#export WORKON_HOME=~/.virtualenvs
+#export PROJECT_HOME=$HOME/develop
+#export VIRTUALENV_ROOT=$WORKON_HOME
 
 # pip
-export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
-export PIP_REQUIRE_VIRTUALENV=true
-syspip(){
-   PIP_REQUIRE_VIRTUALENV="" pip "$@"
-}
+#export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
+#export PIP_REQUIRE_VIRTUALENV=true
+#syspip(){
+   #PIP_REQUIRE_VIRTUALENV="" pip "$@"
+#}
 
-. /usr/local/bin/virtualenvwrapper.sh
-echo "done"
+#. /usr/local/bin/virtualenvwrapper.sh
+#echo "done"
 
-echo -n "jython ..."
-export JYTHON_HOME=$(brew --prefix jython)/libexec
-export PATH=$PATH:$JYTHON_HOME/bin
-echo "done"
+#echo -n "jython ..."
+#export JYTHON_HOME=$(brew --prefix jython)/libexec
+#export PATH=$PATH:$JYTHON_HOME/bin
+#echo "done"
 
 # echo "PYTHON: $(python -c 'import sys; print sys.prefix')"
 
 #---------------------------------------------------------------------
 # NODE.JS
-echo -n "node ..."
-export NODE_PATH=/usr/local/share/npm/lib
-export JS_CMD=node
+#echo -n "node ..."
+#export NODE_PATH=/usr/local/share/npm/lib
+#export JS_CMD=node
 # NVM
 #export NVM_DIR=~/.nvm
 #test -d "$NVM_DIR" || mkdir -p "$NVM_DIR"
 #. $(brew --prefix nvm)/nvm.sh
-echo "done"
+#echo "done"
 
 #---------------------------------------------------------------------
 # GROOVY
@@ -146,3 +149,16 @@ export ANDROID_HOME=/usr/local/opt/android-sdk
 
 # aws completion
 # source /usr/local/share/zsh/site-functions/_aws
+#
+#
+
+export PATH=$PATH:$(yarn global bin):$HOME/.config/yarn/global/node_modules/.bin
+
+# Azure completion
+. <(azure --completion)
+
+# tabtab source for electron-forge package
+# uninstall by removing these lines or running `tabtab uninstall electron-forge`
+[[ -f /usr/local/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.zsh ]] && . /usr/local/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
