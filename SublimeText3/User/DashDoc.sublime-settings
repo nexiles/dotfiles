@@ -1,6 +1,0 @@
-{
-  "syntax_docset_map":
-  {
-    "CoffeeScript"          : ["coffee", "extjs", "nodejs"]
-  }
-}
